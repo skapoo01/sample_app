@@ -1,9 +1,10 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 	gem 'rails', '4.2.2'
 # Use SCSS for stylesheets
+	gem 'bootstrap-sass',		'3.3.6'
 	gem 'sass-rails', 		'5.0.2'
 # Use Uglifier as compressor for JavaScript assets
 	gem 'uglifier', 		'2.5.3'
@@ -46,6 +47,7 @@ end
 group :test do
 	gem 'minitest-reporters', 	'1.0.5'
 	gem 'mini_backtrace',		'0.1.3'
+	gem 'autoprefixer-rails',	'6.3.3.1'
 	#filters backtrace - combine with backtrace silencer
 	gem 'guard-minitest',		'2.3.1'
 end
