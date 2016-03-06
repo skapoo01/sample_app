@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   		# don't do mass assignments - too insecure - use "strong parameters" instead
   		@user = User.new(user_params)
   		if @user.save
+        login @user
   			flash[:success] = "Welcome to the Sample App!"
   			redirect_to @user
   		else

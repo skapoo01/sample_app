@@ -12,4 +12,11 @@ class User < ActiveRecord::Base
 	# model needs a field 'password_digest'
 	# uses bcrypt
 
+	# returns hash digest of a given string
+	def User.digest(string) 
+		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 
+							      BCrypt::Engine.cost 
+		BCrypt::Password.create(string, cost: cost)
+	end
+
 end
