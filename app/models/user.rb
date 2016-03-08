@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 	validates(:email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false})
 
 	has_secure_password
-	validates(:password, length: {minimum: 6})
+	validates(:password, length: {minimum: 6}, allow_blank: true)
 	# secure password machinery - adds assword_digest, password_confirmation, authenticate method
 	# model needs a field 'password_digest'
 	# uses bcrypt
